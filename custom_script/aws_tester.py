@@ -15,9 +15,8 @@ def aws_check(profile):
             return True
     except Exception as e:
         print("ERROR: Uable to make AWS API call using %s profile\nERROR: AWS API call failed due to error %s" % (profile, e))
-        print("WARNING: You might want to try different aws profile, available profiles are -")
-        for i in available_profiles:
-            print("\t- %s" % (i))
+        if available_profiles: print("WARNING: You might want to try different aws profile, available profiles are - %s" % (', '.join(available_profiles)))
+        else: print("WARNING: No AWS Profile configured")
         return False
 
 output = aws_check(args.profile)
