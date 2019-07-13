@@ -19,6 +19,7 @@ pipeline {
     stage('Pre Verification') {
       steps {
         sh '/usr/local/bin/python /usr/local/share/website_tester.py -u "http://www.yomanyoyo.com.s3-website.us-east-2.amazonaws.com/"'
+        sh '/usr/local/bin/python /usr/local/share/aws_tester.py --profile default'
       }
     }
     stage('Deploy') {
