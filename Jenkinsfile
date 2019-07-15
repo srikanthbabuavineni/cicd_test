@@ -34,7 +34,7 @@ pipeline {
     }
     stage('Post Verification') {
       steps {
-        sh '/usr/local/bin/python ./custom_script/website_tester.py -u "http://www.yomanyoyo.com.s3-website.us-east-2.amazonaws.com/"'
+        sh 'python ./custom_script/website_tester.py -u "http://www.yomanyoyo.com.s3-website.us-east-2.amazonaws.com/"'
       }
     }
   }
