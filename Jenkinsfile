@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Testing') {
       steps {
-        sh 'nmp test --coverage'
+        sh 'npm test --coverage'
       }
     }
     stage('Building') {
