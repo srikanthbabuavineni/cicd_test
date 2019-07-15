@@ -3,17 +3,17 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh 'yarn install'
+        sh 'npm install'
       }
     }
     stage('Testing') {
       steps {
-        sh 'yarn test --coverage'
+        sh 'nmp test --coverage'
       }
     }
     stage('Building') {
       steps {
-        sh 'yarn build'
+        sh 'npm build'
       }
     }
     stage('Pre Verification') {
@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'yarn deploy'
+        sh 'npm deploy'
       }
     }
     stage('Post Verification') {
