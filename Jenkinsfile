@@ -3,6 +3,11 @@ pipeline {
   stages {
     stage('Install') {
       steps {
+        git(
+                    url: 'https://github.com/AkshaySiwal/cicd_test.git',
+                    branch: 'master'
+                )
+
         sh 'npm install'
       }
     }
